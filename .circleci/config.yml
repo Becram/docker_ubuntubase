@@ -6,14 +6,14 @@ jobs:
       - image: docker:18.06.1-ce-git
     steps:
       - checkout
-      - run:
-          name: Install dependencies
-          command: |
-            apk add --no-cache \
-              py-pip=9.0.0-r1
-            pip install \
-              docker-compose==18.06.1-ce \
-              awscli==1.16.81
+      # - run:
+      #     name: Install dependencies
+      #     command: |
+      #       apk add --no-cache \
+      #         py-pip=9.0.0-r1
+      #       pip install \
+      #         docker-compose==18.06.1-ce \
+      #         awscli==1.16.81
 
       - run:
           name: Building
