@@ -6,12 +6,12 @@ jobs:
     steps:
       - checkout
       - run:
-          name: The First Step
+          name: lets build the image
           command: |
-            echo 'Hello World!'
-            echo 'This is the delivery pipeline'
+            echo 'Building'
+          docker build -t becram/ubuntu:base .
       - run:
-          name: Code Has Arrived
+          name: Pushing
           command: |
             ls -al
             echo '^^^That should look familiar^^^'
