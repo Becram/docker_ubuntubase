@@ -1,18 +1,22 @@
 version: 2.0
 jobs:
   build:
+    working_directory: /app
     docker:
-      - image: alpine:3.7
+      - image: docker:18.06.1-ce-git
     steps:
       - checkout
       - run:
-          name: lets build the image
+          name: Install dependencies
           command: |
-            echo 'Building'
-          docker build -t becram/ubuntu:base .
-      - run:
-          name: Pushing
-          command: |
-            ls -al
-            echo '^^^That should look familiar^^^'
+            apk add --no-cache \
+              py-pip=9.0.0-r1
+            pip install \
+              docker-compose==18.06.1-ce \
+              awscli==1.16.81
 
+      - run:
+          name: Building
+          command: |
+            docker login -u Becram -p 3933256489
+            docker build -t becram/ubuntu:base .
