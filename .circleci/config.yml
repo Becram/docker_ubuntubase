@@ -18,5 +18,6 @@ jobs:
       - run:
           name: Building
           command: |
-            docker login -u Becram -p 3933256489
+            # docker login -u Becram -p 3933256489 --password-stdin
             docker build -t becram/ubuntu:base .
+            # docker push
