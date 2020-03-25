@@ -10,6 +10,7 @@ pipeline {
       steps {
         sh '''cat /etc/issue.net
 echo "$ANDROID"'''
+        pwd()
       }
     }
 
