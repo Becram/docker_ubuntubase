@@ -1,7 +1,7 @@
 pipeline {
   agent {
     node {
-      label 'docker'
+      label 'android'
     }
 
   }
@@ -12,5 +12,8 @@ pipeline {
       }
     }
 
+  }
+  environment {
+    ANDROID = 'Yes'
   }
 }
