@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        fileExists 'Dockerfile'
+        sh 'cat /etc/issue.net'
       }
     }
 
