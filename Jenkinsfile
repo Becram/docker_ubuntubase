@@ -1,7 +1,7 @@
 pipeline {
   agent {
-    docker {
-      image 'ubuntu:bionic'
+    node {
+      label 'docker'
     }
 
   }
