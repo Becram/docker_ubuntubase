@@ -8,7 +8,8 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'cat /etc/issue.net'
+        sh '''cat /etc/issue.net
+echo "$ANDROID"'''
       }
     }
 
